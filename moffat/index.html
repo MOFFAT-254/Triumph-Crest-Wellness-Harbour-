@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Triumph Crest Wellness Harbour | Your Path to Clarity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* -------------------------------------------
+    * 1. CSS Variables and Base Styles
+    * ------------------------------------------- */
+        :root {
+            --main-bg: #fefcf6;
+            --text-dark: #222;
+            --warm-gold: #c89b3c;
+            --light-gray: #f7f7f7;
+            --deep-green: #004d40;
+            /* Animation Colors */
+            --sky-light: #fef9e7;
+            --sky-dark: #ffe9b3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+
+        body {
+            background: var(--main-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* 1. HEADER & NAVIGATION (PROFESSIONAL UPDATE) */
+        /* ==================================== */
+        header {
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
+            /* Slightly increased padding for height */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            /* Stronger, "floating" shadow */
+            border-bottom: 2px solid var(--light-gray);
+            /* Subtle separation line */
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-logo img {
+            height: 68px;
+            /* Prominent logo size */
+            border-radius: 12px;
+            /* Clean rounding */
+            object-fit: cover;
+            width: auto;
+            transition: opacity 0.3s;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            /* Increased gap for clarity on desktop */
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            /* Bolder font for professionalism */
+            padding: 10px 15px;
+            /* Larger click area */
+            transition: color 0.3s, border-bottom 0.3s, background 0.3s;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: var(--warm-gold);
+            border-bottom: 3px solid var(--warm-gold);
+            /* Thicker underline on hover/active */
+            background: rgba(200, 155, 60, 0.05);
+            /* Subtle background highlight */
+        }
+
+        /* Active/Current Page Styling */
+        nav a[aria-current="page"] {
+            color: var(--warm-gold);
+            border-bottom: 3px solid var(--warm-gold);
+            background: none;
+        }
+
+
+        #menu-icon {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px; /* Added padding for easier clicking */
+        }
+        
+        /* UPDATED: Styles for the Font Awesome Icon */
+        #menu-icon i {
+            font-size: 1.8rem; /* Make the icon size visible */
+            color: var(--deep-green); /* Color the icon */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .nav-book-btn {
+            background: var(--warm-gold);
+            color: white !important;
+            padding: 8px 20px !important;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background 0.3s, transform 0.2s;
+            border: 1px solid var(--warm-gold);
+        }
+
+        .nav-book-btn:hover {
+            background: var(--deep-green);
+            color: white !important;
+            transform: translateY(-1px);
+            border-color: var(--deep-green);
+        }
+
+
+        /* -------------------------------------------
+    * 3. ANIMATED HERO SECTION
+    * ------------------------------------------- */
+        @keyframes rise {
+            0% {
+                transform: translateY(100%);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes sun-fade {
+            0% {
+                background: var(--sky-dark);
+                box-shadow: 0 0 40px var(--sky-dark);
+            }
+
+            50% {
+                background: var(--warm-gold);
+                box-shadow: 0 0 60px var(--warm-gold);
+            }
+
+            100% {
+                background: var(--sky-light);
+                box-shadow: 0 0 40px var(--sky-light);
+            }
+        }
+
+        .hero-container {
+            position: relative;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(to bottom, var(--sky-light) 0%, #ffffff 100%);
+            text-align: center;
+            border-bottom: 5px solid var(--deep-green);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--deep-green);
+            margin-bottom: 10px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
+        }
+
+        /* Sun Animation */
+        .sun-animation {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: sun-fade 10s infinite alternate;
+            z-index: 5;
+        }
+
+        /* Mountain SVG Styling */
+        .mountains {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            fill: var(--deep-green);
+            z-index: 8;
+            transform: translateY(100%);
+            animation: rise 3s forwards;
+        }
+
+        /* -------------------------------------------
+    * 4. INTRO & FEATURED SERVICES
+    * ------------------------------------------- */
+        .intro-section {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .intro-section h2 {
+            color: var(--warm-gold);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .intro-section p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .feature-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            border-top: 5px solid var(--deep-green);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--warm-gold);
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: var(--deep-green);
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--deep-green);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 40px;
+            transition: background 0.3s;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .cta-button:hover {
+            background: var(--warm-gold);
+            color: var(--text-dark);
+        }
+
+        /* -------------------------------------------
+    * 5. CONTACT & FOOTER
+    /* CONTACT / FORM */
+        .contact-section {
+            padding: 70px 20px;
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-section h2 {
+            color: var(--deep-green);
+            margin-bottom: 10px;
+        }
+
+        .contact-section p {
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            width: 100%;
+            transition: border 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--warm-gold);
+            outline: none;
+        }
+
+        button {
+            background: var(--warm-gold);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #a67c2a;
+        }
+
+        /* -------------------------------------------
+    * 4. FOOTER & FLOATING BUTTON
+    * ------------------------------------------- */
+        .footer {
+            background: var(--deep-green);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .footer .social-links {
+            margin: 15px 0;
+        }
+
+        .footer .social-icon {
+            color: var(--warm-gold);
+            /* Gold icons in green footer */
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer .social-icon:hover {
+            color: var(--warm-gold);
+        }
+
+        /* WHATSAPP FLOAT */
+        #whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            font-size: 26px;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            z-index: 200;
+        }
+
+        .footer {
+            background: var(--deep-green);
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            margin-top: 40px;
+        }
+
+        .footer .social-links {
+            margin: 10px 0;
+        }
+
+        .footer .social-icon {
+            margin: 0 10px;
+            color: white;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer .social-icon:hover {
+            color: var(--warm-gold);
+        }
+
+        #whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            font-size: 26px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        /* -------------------------------------------
+    * 6. RESPONSIVE STYLES
+    * ------------------------------------------- */
+        @media(max-width:850px) {
+            #menu-icon {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 90px;
+                right: 0;
+                width: 220px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px 0 0 8px;
+                padding: 10px 0;
+                background: white;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 12px 20px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .feature-grid {
+                gap: 20px;
+            }
+
+            .feature-card {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="top-logo">
+            <a href="index.html">
+                <img src="https://i.postimg.cc/G28B4Lf7/IMG-20251105-WA0002-1.jpg" alt="Triumph Crest Logo">
+            </a>
+        </div>
+        <button id="menu-icon" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="contact.html">contact</a>
+            <a href="#contact" class="nav-book-btn">Book</a>
+        </nav>
+    </header>
+
+    <section class="hero-container">
+        <div class="sun-animation"></div>
+
+        <div class="hero-content">
+            <h1>Your Anchor in the Storm. Your Path to Clarity.</h1>
+      <p>"At Triumph Crest Wellness Harbour, we believe every challenge is a stepping stone to growth. Let us be your anchor as you navigate toward clarity and confidence."</p>
+            <a href="#featured-services" class="cta-button">Explore Our Services</a>
+        </div>
+
+        <svg class="mountains" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill-opacity="1"
+                d="M0,160L48,160C96,160,192,160,288,176C384,192,480,224,576,245.3C672,267,768,277,864,266.7C960,256,1056,224,1152,213.3C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+        </svg>
+    </section>
+
+    <section id="featured-services" class="intro-section">
+        <h2>Holistic Support for a Healthier You</h2>
+        <p>We provide a safe, non-judgmental harbour where professional care meets genuine compassion. Your journey toward
+            wholeness begins here.</p>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-user"></i>
+                <h3>Individual Growth</h3>
+                <p>One-on-one sessions to navigate personal stress, anxiety, trauma, and identity exploration.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-handshake-angle"></i>
+                <h3>Relationship Healing</h3>
+                <p>Specialized counselling to improve communication, resolve conflicts, and rebuild trust in couples and
+                    families.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Mind-Body Wellness</h3>
+                <p>Focusing on holistic well-being, incorporating mindfulness and practical coping strategies.</p>
+            </div>
+        </div>
+
+        <a href="service.html" class="cta-button">View All Services</a>
+    </section>
+
+    <hr>
+
+    <section id="contact" class="contact-section">
+        <h2>Ready to Take the Next Step?</h2>
+        <p>Fill in your details and we’ll reach you via WhatsApp to schedule your complimentary introductory call.</p>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="tel" id="phone" placeholder="Phone Number (e.g., +254720XXXXXX)" required>
+            <select id="service-of-interest"
+                style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; width: 100%;">
+                <option value="">-- Interested Service --</option>
+                <option value="Individual Counselling">Individual Counselling</option>
+                <option value="Couples Counselling">Couples & Marriage Counselling</option>
+                <option value="General Inquiry">General Inquiry / Assessment</option>
+            </select>
+            <textarea id="message" rows="4"
+                placeholder="Briefly describe what you're seeking help with (Optional)"></textarea>
+            <button type="submit">Send Inquiry via WhatsApp</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>📞 +254 720 305619 | ✉ info@triumphcrestwh.com</p>
+        <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/254720305619" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>© 2025 Triumph Crest Wellness Harbour</p>
+    </footer>
+
+    <a href="https://wa.me/254720305619" target="_blank" id="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        // Toggle Menu for Mobile
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+        const iconElement = menuIcon.querySelector('i'); // Get the Font Awesome icon element
+
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('active');
+            navbar.classList.toggle('active');
+
+            // Toggle the icon between bars (menu) and times (close)
+            if (navbar.classList.contains('active')) {
+                iconElement.classList.remove('fa-bars');
+                iconElement.classList.add('fa-times');
+            } else {
+                iconElement.classList.remove('fa-times');
+                iconElement.classList.add('fa-bars');
+            }
+        });
+
+        // WhatsApp Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const serviceOfInterest = document.getElementById('service-of-interest').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            let text = `Hello, my name is ${name}. My phone number is ${phone}. I am interested in: *${serviceOfInterest}*.`;
+
+            if (message) {
+                text += `\nMy message is: ${message}`;
+            }
+
+            window.open(`https://wa.me/254720305619?text=${encodeURIComponent(text)}`, '_blank');
+        });
+    </script>
+</body>
+
+</html>

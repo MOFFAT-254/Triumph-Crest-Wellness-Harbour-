@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Our Services — Triumph Crest Wellness Harbour</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* RESTORED ORIGINAL PALETTE */
+            --main-bg: #fefcf6;
+            /* Creamy/Beige background */
+            --text-dark: #222;
+            --warm-gold: #c89b3c;
+            /* Accent Color */
+            --light-gray: #f7f7f7;
+            --deep-green: #004d40;
+            /* Primary Color */
+            --light-cream: #fffaf0;
+            /* Lighter accent background */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+
+        body {
+            background: var(--main-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Utility Class for Centering Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+         /* ==================================== */
+        /* 1. HEADER & NAVIGATION (PROFESSIONAL UPDATE) */
+        /* ==================================== */
+        header {
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
+            /* Slightly increased padding for height */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            /* Stronger, "floating" shadow */
+            border-bottom: 2px solid var(--light-gray);
+            /* Subtle separation line */
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-logo img {
+            height: 68px;
+            /* Prominent logo size */
+            border-radius: 12px;
+            /* Clean rounding */
+            object-fit: cover;
+            width: auto;
+            transition: opacity 0.3s;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            /* Increased gap for clarity on desktop */
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            /* Bolder font for professionalism */
+            padding: 10px 15px;
+            /* Larger click area */
+            transition: color 0.3s, border-bottom 0.3s, background 0.3s;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: var(--warm-gold);
+            border-bottom: 3px solid var(--warm-gold);
+            /* Thicker underline on hover/active */
+            background: rgba(200, 155, 60, 0.05);
+            /* Subtle background highlight */
+        }
+
+        /* Active/Current Page Styling */
+        nav a[aria-current="page"] {
+            color: var(--warm-gold);
+            border-bottom: 3px solid var(--warm-gold);
+            background: none;
+        }
+
+
+        #menu-icon {
+            display: none;
+        }
+
+        .nav-book-btn {
+            background: var(--warm-gold);
+            color: white !important;
+            padding: 8px 20px !important;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background 0.3s, transform 0.2s;
+            border: 1px solid var(--warm-gold);
+        }
+
+        .nav-book-btn:hover {
+            background: var(--deep-green);
+            color: white !important;
+            transform: translateY(-1px);
+            border-color: var(--deep-green);
+        }
+
+
+
+
+        /* ==================================== */
+        /* 2. SERVICES HERO SECTION */
+        /* ==================================== */
+        .services-hero {
+            /* REMINDER: Replace 'YOUR_DARK_WELLNESS_IMAGE_URL.jpg' with a real URL */
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.pexels.com/photos/4098152/pexels-photo-4098152.jpeg');
+            /* Used a placeholder image URL */
+
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 120px 20px;
+            /* Increased padding */
+            text-align: center;
+        }
+
+        .services-hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            /* Increased spacing */
+            text-transform: uppercase;
+            line-height: 1.1;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 1);
+            color: #ffffff;
+            /* Explicitly white */
+        }
+
+        .services-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .hero-cta-btn {
+            background: var(--warm-gold);
+            color: var(--deep-green);
+            text-decoration: none;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-cta-btn:hover {
+            background: var(--deep-green);
+            color: var(--warm-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ==================================== */
+        /* 3. SERVICE CARDS SECTION */
+        /* ==================================== */
+        .service-cards-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .service-cards-section h2 {
+            color: var(--deep-green);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            padding-bottom: 10px;
+            display: inline-block;
+            border-bottom: 4px solid var(--warm-gold);
+            /* Thicker, prominent gold underline */
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            /* Subtle box shadow for lift */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            /* Very light border for definition */
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            /* Deeper lift on hover */
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+            /* More prominent shadow on hover */
+            border-color: var(--warm-gold);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 220px;
+            /* Slightly taller images */
+            object-fit: cover;
+            /* Subtle filter to integrate with the brand tone */
+            filter: grayscale(10%) contrast(90%);
+        }
+
+        .service-card:hover img {
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        .card-content {
+            padding: 25px;
+            /* Increased padding */
+        }
+
+        .card-content h3 {
+            color: var(--deep-green);
+            /* Deep Green for H3 title */
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        .card-content p {
+            color: #444;
+            /* Slightly darker text for readability */
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .card-content a.learn-more {
+            color: var(--warm-gold);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.3s;
+        }
+
+        .card-content a.learn-more:hover {
+            color: var(--deep-green);
+        }
+
+        /* CONTACT / FORM */
+        .contact-section {
+            padding: 70px 20px;
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-section h2 {
+            color: var(--deep-green);
+            margin-bottom: 10px;
+        }
+
+        .contact-section p {
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            width: 100%;
+            transition: border 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--warm-gold);
+            outline: none;
+        }
+
+        button {
+            background: var(--warm-gold);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #a67c2a;
+        }
+
+     /* -------------------------------------------
+    * 4. FOOTER & FLOATING BUTTON
+    * ------------------------------------------- */
+    .footer {
+      background: var(--deep-green);
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    .footer .social-links {
+      margin: 15px 0;
+    }
+
+    .footer .social-icon {
+      margin: 0 10px;
+      color: white;
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    .footer .social-icon:hover {
+      color: var(--warm-gold);
+    }
+        /* WHATSAPP FLOAT */
+        #whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            font-size: 26px;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            z-index: 200;
+        }
+
+        /* -------------------------------------------
+     * 5. RESPONSIVE STYLES (Mobile)
+     * ------------------------------------------- */
+        @media(max-width: 768px) {
+            /* Mobile Menu Styling */
+            nav {
+                display: none;
+                flex-direction: column;
+                background: white;
+                position: absolute;
+                top: 80px;
+                right: 20px;
+                width: 220px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+                border-radius: 8px;
+                padding: 10px 0;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            #menu-icon {
+                display: block;
+                width: 30px;
+                height: 22px;
+                position: relative;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+            #menu-icon span {
+                position: absolute;
+                height: 3px;
+                width: 100%;
+                background: var(--deep-green);
+                border-radius: 2px;
+                transition: 0.25s ease;
+            }
+
+            #menu-icon span:nth-child(1) {
+                top: 0;
+            }
+
+            #menu-icon span:nth-child(2) {
+                top: 9px;
+            }
+
+            #menu-icon span:nth-child(3) {
+                top: 18px;
+            }
+
+            #menu-icon.active span:nth-child(1) {
+                transform: rotate(45deg);
+                top: 9px;
+            }
+
+            #menu-icon.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            #menu-icon.active span:nth-child(3) {
+                transform: rotate(-45deg);
+                top: 9px;
+            }
+
+            /* ==================================== */
+            /* 5. FOOTER & WHATSAPP FLOAT */
+            /* ==================================== */
+            .footer {
+                background: var(--deep-green);
+                color: white;
+                text-align: center;
+                padding: 30px 10px;
+            }
+
+            .footer p {
+                font-size: 0.95rem;
+                margin: 5px 0;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            .footer .social-icon {
+                color: var(--warm-gold);
+                /* Gold icons in green footer */
+                font-size: 1.5rem;
+                transition: color 0.3s;
+            }
+
+            .footer .social-icon:hover {
+                color: white;
+            }
+
+            #whatsapp-float {
+                z-index: 101;
+                /* Ensure it's above the sticky header if possible */
+            }
+
+            /* ==================================== */
+            /* 6. RESPONSIVE ADJUSTMENTS */
+            /* ==================================== */
+            @media(max-width:768px) {
+
+                .services-hero h1 {
+                    font-size: 2.8rem;
+                    letter-spacing: 0.1em;
+                }
+
+                /* Mobile Menu Logic (Kept your original implementation) */
+                nav {
+                    top: 60px;
+                    /* Adjusted to new, sleeker header height */
+                }
+
+                /* Hiding the Book Now button from the main navigation on mobile 
+             since it is available on the Hero and as a float. */
+                .nav-book-btn {
+                    display: none;
+                }
+
+                /* FIX 2: Correctly re-display the Book Now button when the menu is active */
+                nav.active .nav-book-btn {
+                    display: block !important;
+                    margin: 10px 0; /* Add margin for separation in the mobile list */
+                }
+            }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="top-logo">
+            <img src="https://i.postimg.cc/G28B4Lf7/IMG-20251105-WA0002-1.jpg" alt="Triumph Crest Logo">
+        </div>
+
+        <button id="menu-icon" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html" aria-current="page">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="#contact" class="nav-book-btn">Book Now</a>
+        </nav>
+    </header>
+
+    <section class="services-hero">
+        <div class="container">
+            <h1>Our Comprehensive Services</h1>
+            <p>Your journey to inner peace and lasting change begins here. Explore our personalized therapy and
+                counselling options designed for every stage of life.</p>
+            <a href="#contact" class="hero-cta-btn">Begin Your Journey</a>
+        </div>
+    </section>
+
+    <section class="service-cards-section">
+        <div class="container">
+            <h2>Find Your Path to Healing</h2>
+            <div class="service-grid">
+
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg" alt="Individual Therapy Session">
+                    <div class="card-content">
+                        <h3>Individual Therapy</h3>
+                        <p>One-on-one sessions focused on personal growth, overcoming anxiety, managing stress, and building
+                            emotional resilience. A private space for self-discovery.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://media.istockphoto.com/id/2162069825/photo/happy-couple-having-a-counseling-session-with-therapist.jpg?s=2048x2048&w=is&k=20&c=2SpzL6eTH-BH9ZR2cE3SQ7aHU3wKxYgji96KtuPupuE=" alt="Couples Therapy Session">
+                    <div class="card-content">
+                        <h3>Couples Counselling</h3>
+                        <p>Strengthen your relationship, improve communication, and resolve conflicts with constructive
+                            guidance. Build a healthier, more fulfilling partnership.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/8205410/pexels-photo-8205410.jpeg" alt="Family Therapy Session">
+                    <div class="card-content">
+                        <h3>Family Counselling</h3>
+                        <p>Address complex family dynamics, foster understanding, and create a supportive environment for
+                            all members. Heal rifts and grow together.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/5711017/pexels-photo-5711017.jpeg" alt="Group Therapy Session">
+                    <div class="card-content">
+                        <h3>Specialized Group Therapy</h3>
+                        <p>Connect with others facing similar challenges in a supportive group setting. Topics include grief
+                            support, mindfulness, and social anxiety.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Ready to Take the Next Step?</h2>
+        <p>Fill in your details and we’ll reach you via WhatsApp to schedule your complimentary introductory call.</p>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="tel" id="phone" placeholder="Phone Number (e.g., +254720XXXXXX)" required>
+            <select id="service-of-interest" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; width: 100%;">
+                <option value="">-- Interested Service --</option>
+                <option value="Individual Counselling">Individual Counselling</option>
+                <option value="Couples Counselling">Couples & Marriage Counselling</option>
+                <option value="General Inquiry">General Inquiry / Assessment</option>
+            </select>
+            <textarea id="message" rows="4" placeholder="Briefly describe what you're seeking help with (Optional)"></textarea>
+            <button type="submit">Send Inquiry via WhatsApp</button>
+        </form>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>📞 +254 720 305619 | ✉ info@triumphcrestwh.com | 📍 Nairobi, Kenya</p>
+            <div class="social-links">
+                <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/254720305619" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>© 2025 Triumph Crest Wellness Harbour. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/254720305619" target="_blank" id="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('active');
+            navbar.classList.toggle('active');
+        });
+
+        // FIX 1: Updated JavaScript to include the 'service-of-interest' in the WhatsApp message
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const serviceOfInterest = document.getElementById('service-of-interest').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            let text = `Hello, my name is ${name}. My phone number is ${phone}.`;
+
+            if (serviceOfInterest) {
+                text += ` I am interested in: *${serviceOfInterest}*.`;
+            } else {
+                 text += ` I am submitting a general inquiry.`;
+            }
+            
+            if (message) {
+                text += `\nAdditional Message: ${message}`;
+            }
+
+            window.open(`https://wa.me/254720305619?text=${encodeURIComponent(text)}`, '_blank');
+        });
+    </script>
+</body>
+
+</html>

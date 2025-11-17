@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us — Triumph Crest Wellness Harbour</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* -------------------------------------------
+    * 1. CSS Variables and Base Styles
+    * ------------------------------------------- */
+    :root {
+      --main-bg: #fefcf6;
+      --text-dark: #222;
+      --warm-gold: #c89b3c;
+      --light-gray: #f8f8f8;
+      --deep-green: #004d40;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: var(--main-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+     /* ==================================== */
+        /* 1. HEADER & NAVIGATION (PROFESSIONAL UPDATE) */
+        /* ==================================== */
+        header {
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
+            /* Slightly increased padding for height */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            /* Stronger, "floating" shadow */
+            border-bottom: 2px solid var(--light-gray);
+            /* Subtle separation line */
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-logo img {
+            height: 68px;
+            /* Prominent logo size */
+            border-radius: 12px;
+            /* Clean rounding */
+            object-fit: cover;
+            width: auto;
+            transition: opacity 0.3s;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            /* Increased gap for clarity on desktop */
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            /* Bolder font for professionalism */
+            padding: 10px 15px;
+            /* Larger click area */
+            transition: color 0.3s, border-bottom 0.3s, background 0.3s;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: var(--warm-gold);
+            border-bottom: 3px solid var(--warm-gold);
+            /* Thicker underline on hover/active */
+            background: rgba(200, 155, 60, 0.05);
+            /* Subtle background highlight */
+        }
+
+        /* Active/Current Page Styling */
+        nav a[aria-current="page"] {
+            color: var(--warm-gold);
+            border-bottom: 3px solid var(--warm-gold);
+            background: none;
+        }
+
+
+        #menu-icon {
+            display: none;
+        }
+
+        .nav-book-btn {
+            background: var(--warm-gold);
+            color: white !important;
+            padding: 8px 20px !important;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background 0.3s, transform 0.2s;
+            border: 1px solid var(--warm-gold);
+        }
+
+        .nav-book-btn:hover {
+            background: var(--deep-green);
+            color: white !important;
+            transform: translateY(-1px);
+            border-color: var(--deep-green);
+        }
+
+
+    
+
+    /* -------------------------------------------
+    * 3. MAIN CONTENT SECTIONS
+    * ------------------------------------------- */
+
+    /* HERO / FOUNDER */
+    .about-hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #fff9ec;
+      border-radius: 15px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .founder-img img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .founder-img img:hover {
+      transform: scale(1.05);
+    }
+
+    .founder-info {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .founder-info h2 {
+      color: var(--deep-green);
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .founder-info h4 {
+      color: var(--warm-gold);
+      font-size: 1.1rem;
+      margin-bottom: 18px;
+    }
+
+    .founder-info p {
+      color: #555;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* ABOUT SECTION */
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-text h2 {
+      color: var(--deep-green);
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      color: #444;
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+    }
+
+    .about-img {
+      flex: 1;
+      text-align: center;
+    }
+
+    .about-img img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* MISSION / VISION */
+    .mission {
+      text-align: center;
+      padding: 70px 20px;
+      background: var(--light-gray);
+    }
+
+    .mission h3 {
+      color: var(--deep-green);
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .mission p {
+      max-width: 800px;
+      margin: 10px auto 30px;
+      color: #555;
+      font-size: 1.05rem;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      text-align: center;
+      padding: 70px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .testimonials h2 {
+      color: var(--deep-green);
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    .testimonial-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .testimonial-card {
+      background: #fff9ec;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      max-width: 300px;
+      text-align: left;
+      transition: transform 0.3s;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonial-card p {
+      color: #555;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card h4 {
+      color: var(--deep-green);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* CONTACT / FORM */
+    .contact-section {
+      padding: 70px 20px;
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-section h2 {
+      color: var(--deep-green);
+      margin-bottom: 10px;
+    }
+
+    .contact-section p {
+      margin-bottom: 25px;
+      color: #555;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input,
+    textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      width: 100%;
+      transition: border 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--warm-gold);
+      outline: none;
+    }
+
+    button {
+      background: var(--warm-gold);
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #a67c2a;
+    }
+
+    /* -------------------------------------------
+    * 4. FOOTER & FLOATING BUTTON
+    * ------------------------------------------- */
+    .footer {
+      background: var(--deep-green);
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    .footer .social-links {
+      margin: 15px 0;
+    }
+
+    .footer .social-icon {
+      margin: 0 10px;
+      color: white;
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    .footer .social-icon:hover {
+      color: var(--warm-gold);
+    }
+
+    /* WHATSAPP FLOAT */
+    #whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      font-size: 26px;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      z-index: 200;
+    }
+
+    /* -------------------------------------------
+    * 5. RESPONSIVE STYLES (Mobile)
+    * ------------------------------------------- */
+    @media(max-width: 768px) {
+      /* Mobile Menu Styling */
+      nav {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        width: 220px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        padding: 10px 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      #menu-icon {
+        display: block;
+        width: 30px;
+        height: 22px;
+        position: relative;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      #menu-icon span {
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: var(--deep-green);
+        border-radius: 2px;
+        transition: 0.25s ease;
+      }
+
+      #menu-icon span:nth-child(1) {
+        top: 0;
+      }
+
+      #menu-icon span:nth-child(2) {
+        top: 9px;
+      }
+
+      #menu-icon span:nth-child(3) {
+        top: 18px;
+      }
+
+      #menu-icon.active span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 9px;
+      }
+
+      #menu-icon.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      #menu-icon.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 9px;
+      }
+
+      /* Layout Adjustments */
+      .about-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .founder-img img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .about-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+      }
+
+      .testimonial-card {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="top-logo">
+      <img src="https://i.postimg.cc/G28B4Lf7/IMG-20251105-WA0002-1.jpg" alt="Triumph Crest Logo">
+    </div>
+    <button id="menu-icon" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html" style="color:var(--warm-gold);">About</a>
+      <a href="service.html">Services</a>
+      <a href="contact.html">contact</a>
+      <a href="#contact" style="background:var(--warm-gold);color:white;padding:6px 12px;border-radius:4px;">Book</a>
+    </nav>
+  </header>
+
+  <section class="about-hero">
+    <div class="founder-img">
+      <img src="https://images.pexels.com/photos/32630339/pexels-photo-32630339.jpeg" alt="Founder Jane Doe">
+    </div>
+    <div class="founder-info">
+      <h2>Jane Doe</h2>
+      <h4>Founder & Lead Counsellor</h4>
+      <p>“At Triumph Crest Wellness Harbour, we believe every challenge is a stepping stone to growth. Let us be your
+        anchor as you navigate toward clarity and confidence.”</p>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="about-text">
+      <h2>About Triumph Crest Wellness Harbour</h2>
+      <p>Triumph Crest Wellness Harbour is a compassionate counselling and therapy centre dedicated to helping
+        individuals, couples, and families heal and grow. We provide a safe, non-judgemental space where you can rediscover
+        strength, clarity, and peace.</p>
+      <p>Our team of professional therapists focuses on holistic healing—addressing emotional, mental, and relational
+        well-being. Whether you’re facing anxiety, relationship challenges, or seeking guidance, we’re here to walk with
+        you on your journey to wholeness.</p>
+    </div>
+    <div class="about-img">
+      <img src="https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg" alt="Counselling session">
+    </div>
+  </section>
+
+  <section class="mission">
+    <h3>Our Mission</h3>
+    <p>To empower individuals to embrace healing, resilience, and purpose through professional and compassionate
+      counselling services.</p>
+    <h3>Our Vision</h3>
+    <p>To be a beacon of hope and wellness, inspiring emotional balance and healthy relationships across our
+      communities.</p>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial-card">
+        <p>"The team at Triumph Crest helped me navigate a difficult time with empathy and professionalism. I feel more
+          confident and at peace than ever."</p>
+        <h4>- Sarah K.</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"I always felt heard and supported. Their holistic approach to counselling made a real difference in my
+          life."</p>
+        <h4>- Michael N.</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Compassionate, understanding, and professional. Triumph Crest Wellness Harbour truly cares about their
+          clients."</p>
+        <h4>- Ogutu V.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Ready to Take the Next Step?</h2>
+    <p>Fill in your details and we’ll reach you via WhatsApp to schedule your complimentary introductory call.</p>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="phone" placeholder="Phone Number (e.g., +254720XXXXXX)" required>
+      <select id="service-of-interest" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; width: 100%;">
+        <option value="">-- Interested Service --</option>
+        <option value="Individual Counselling">Individual Counselling</option>
+        <option value="Couples Counselling">Couples & Marriage Counselling</option>
+        <option value="General Inquiry">General Inquiry / Assessment</option>
+      </select>
+      <textarea id="message" rows="4" placeholder="Briefly describe what you're seeking help with (Optional)"></textarea>
+      <button type="submit">Send Inquiry via WhatsApp</button>
+    </form>
+  </section>
+  
+  <footer class="footer">
+    <p>📞 +254 720 305619 | ✉ info@triumphcrestwh.com</p>
+    <div class="social-links">
+      <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/254720305619" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p>© 2025 Triumph Crest Wellness Harbour</p>
+  </footer>
+
+  <a href="https://wa.me/254720305619" target="_blank" id="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // 1. Mobile Menu Toggle
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.getElementById('navbar');
+    menuIcon.addEventListener('click', () => {
+      menuIcon.classList.toggle('active');
+      navbar.classList.toggle('active');
+    });
+
+    // 2. WhatsApp Contact Form Handler
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Stop the default form submission
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const text = `Hello, my name is ${name}. My phone number is ${phone}. ${message ? "Message: " + message : ""}`;
+
+      // Open WhatsApp link in a new tab with pre-filled message
+      window.open(`https://wa.me/254720305619?text=${encodeURIComponent(text)}`, '_blank');
+    });
+  </script>
+</body>
+
+</html>

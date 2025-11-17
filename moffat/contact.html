@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us — Triumph Crest Wellness Harbour</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --main-bg: #fefcf6;
+      --text-dark: #222;
+      --warm-gold: #c89b3c;
+      --light-gray: #f8f8f8;
+      --deep-green: #004d40;
+    }
+
+    * {margin:0;padding:0;box-sizing:border-box;font-family:"Inter",sans-serif;}
+    body {background:var(--main-bg);color:var(--text-dark);scroll-behavior:smooth;}
+
+     /* ==================================== */
+        /* 1. HEADER & NAVIGATION (PROFESSIONAL UPDATE) */
+        /* ==================================== */
+        header {
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
+            /* Slightly increased padding for height */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            /* Stronger, "floating" shadow */
+            border-bottom: 2px solid var(--light-gray);
+            /* Subtle separation line */
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-logo img {
+            height: 68px;
+            /* Prominent logo size */
+            border-radius: 12px;
+            /* Clean rounding */
+            object-fit: cover;
+            width: auto;
+            transition: opacity 0.3s;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            /* Increased gap for clarity on desktop */
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            /* Bolder font for professionalism */
+            padding: 10px 15px;
+            /* Larger click area */
+            transition: color 0.3s, border-bottom 0.3s, background 0.3s;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: var(--warm-gold);
+            border-bottom: 3px solid var(--warm-gold);
+            /* Thicker underline on hover/active */
+            background: rgba(200, 155, 60, 0.05);
+            /* Subtle background highlight */
+        }
+
+        /* Active/Current Page Styling */
+        nav a[aria-current="page"] {
+            color: var(--warm-gold);
+            border-bottom: 3px solid var(--warm-gold);
+            background: none;
+        }
+
+
+        #menu-icon {
+            display: none;
+        }
+
+        .nav-book-btn {
+            background: var(--warm-gold);
+            color: white !important;
+            padding: 8px 20px !important;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background 0.3s, transform 0.2s;
+            border: 1px solid var(--warm-gold);
+        }
+
+        .nav-book-btn:hover {
+            background: var(--deep-green);
+            color: white !important;
+            transform: translateY(-1px);
+            border-color: var(--deep-green);
+        }
+
+
+    /* HERO */
+    .contact-hero{
+      text-align:center;
+      background:linear-gradient(rgba(0,77,64,0.7),rgba(0,77,64,0.7)),
+        url('https://images.pexels.com/photos/1181712/pexels-photo-1181712.jpeg');
+      background-size:cover;background-position:center;
+      color:white;padding:100px 20px;
+    }
+    .contact-hero h1{font-size:2.5rem;margin-bottom:15px;}
+    .contact-hero p{font-size:1.1rem;max-width:650px;margin:auto;}
+
+    /* CONTACT SECTION */
+    .contact-container{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;max-width:1000px;margin:80px auto;padding:0 20px;
+    }
+    .contact-info{background:var(--light-gray);border-radius:12px;padding:30px;box-shadow:0 6px 18px rgba(0,0,0,0.05);}
+    .contact-info h2{color:var(--deep-green);margin-bottom:20px;}
+    .info-item{display:flex;align-items:center;gap:15px;margin-bottom:18px;}
+    .info-item i{color:var(--warm-gold);font-size:1.4rem;}
+    .info-item p{color:#444;}
+
+    form{display:flex;flex-direction:column;gap:15px;}
+    input,textarea{
+      padding:12px;border:1px solid #ccc;border-radius:6px;font-size:1rem;width:100%;
+      transition:border 0.3s ease;
+    }
+    input:focus,textarea:focus{border-color:var(--warm-gold);outline:none;}
+    button{
+      background:var(--warm-gold);color:white;border:none;padding:12px;font-size:1rem;
+      border-radius:6px;cursor:pointer;font-weight:600;transition:background 0.3s ease;
+    }
+    button:hover{background:#a67c2a;}
+
+    /* MAP */
+    .map iframe{width:100%;height:250px;border:0;border-radius:10px;}
+
+    /* FOOTER */
+    .footer{
+      background:var(--deep-green);color:white;text-align:center;padding:30px 15px;margin-top:70px;
+    }
+    .footer .social-links{margin:15px 0;}
+    .footer .social-icon{margin:0 10px;color:white;font-size:1.3rem;transition:color 0.3s;}
+    .footer .social-icon:hover{color:var(--warm-gold);}
+
+    /* WHATSAPP FLOAT */
+    #whatsapp-float{
+      position:fixed;bottom:20px;right:20px;background:#25d366;color:white;font-size:26px;
+      border-radius:50%;width:55px;height:55px;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);text-decoration:none;z-index:200;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      nav{display:none;flex-direction:column;background:white;position:absolute;top:80px;right:20px;width:220px;
+        box-shadow:0 5px 10px rgba(0,0,0,0.15);border-radius:8px;padding:10px 0;}
+      nav.active{display:flex;}
+      #menu-icon{display:block;width:30px;height:22px;position:relative;background:none;border:none;cursor:pointer;}
+      #menu-icon span{position:absolute;height:3px;width:100%;background:var(--deep-green);border-radius:2px;transition:0.25s;}
+      #menu-icon span:nth-child(1){top:0;}#menu-icon span:nth-child(2){top:9px;}#menu-icon span:nth-child(3){top:18px;}
+      #menu-icon.active span:nth-child(1){transform:rotate(45deg);top:9px;}
+      #menu-icon.active span:nth-child(2){opacity:0;}
+      #menu-icon.active span:nth-child(3){transform:rotate(-45deg);top:9px;}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="top-logo">
+      <img src="https://i.postimg.cc/G28B4Lf7/IMG-20251105-WA0002-1.jpg" alt="Triumph Crest Logo">
+    </div>
+    <button id="menu-icon" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Services</a>
+        
+  <a href="contact.html" style="background:var(--warm-gold);color:white;padding:6px 12px;border-radius:4px;">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact-hero">
+    <h1>Contact Us</h1>
+    <p>We’re here to support your journey toward wellness. Reach out to us for inquiries, bookings, or guidance — we’ll respond as soon as possible.</p>
+  </section>
+
+  <section class="contact-container">
+    <!-- CONTACT INFO -->
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <div class="info-item"><i class="fas fa-phone"></i><p>+254 720 305619</p></div>
+      <div class="info-item"><i class="fas fa-envelope"></i><p>info@triumphcrestwh.com</p></div>
+      <div class="info-item"><i class="fas fa-map-marker-alt"></i><p>Nairobi, Kenya</p></div>
+      <div class="info-item"><i class="fab fa-whatsapp"></i><p><a href="https://wa.me/254720305619" target="_blank" style="color:var(--deep-green);text-decoration:none;">Chat on WhatsApp</a></p></div>
+      
+        
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <form id="contactForm">
+      <h2 style="color:var(--deep-green);">Send Us a Message</h2>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send via WhatsApp</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>📞 +254 720 305619 | ✉ info@triumphcrestwh.com</p>
+    <div class="social-links">
+      <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/254720305619" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p>© 2025 Triumph Crest Wellness Harbour</p>
+  </footer>
+
+  <a href="https://wa.me/254720305619" target="_blank" id="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.getElementById('navbar');
+    menuIcon.addEventListener('click', ()=> {
+      menuIcon.classList.toggle('active');
+      navbar.classList.toggle('active');
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim();
+      const phone=document.getElementById('phone').value.trim();
+      const message=document.getElementById('message').value.trim();
+      const text=`Hello, my name is ${name}. My phone number is ${phone}. ${message ? "Message: " + message : ""}`;
+      window.open(`https://wa.me/254720305619?text=${encodeURIComponent(text)}`,'_blank');
+    });
+  </script>
+</body>
+</html>
